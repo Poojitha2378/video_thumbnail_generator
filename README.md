@@ -9,19 +9,43 @@ Automated Social Video Thumbnail & Copy Generator built with Streamlit, OpenCV, 
 - Download the generated captions as a text file.
 
 ## Getting Started
-1. Install dependencies:
+Follow these steps to run the app on your local computer.
+
+1) **Install Python 3.9+**
+   - Confirm with `python --version`. Use `python3` instead of `python` on macOS/Linux if needed.
+
+2) **Create and activate a virtual environment (recommended):**
    ```bash
+   python -m venv .venv
+   # Windows
+   .venv\Scripts\activate
+   # macOS/Linux
+   source .venv/bin/activate
+   ```
+
+3) **Install dependencies:**
+   ```bash
+   pip install --upgrade pip
    pip install -r requirements.txt
    ```
-2. (Optional) Generate a small demo video for local testing:
+   > The first run will download the BLIP captioning model from Hugging Face; keep an internet connection open.
+
+4) **(Optional) Generate a small demo video for local testing:**
    ```bash
    python scripts/generate_sample_video.py samples/demo.mp4
    ```
-3. Run the Streamlit app:
+
+5) **Run the Streamlit app:**
    ```bash
    streamlit run app.py
    ```
-4. Upload a short video (or `samples/demo.mp4`) to see extracted thumbnails and suggested captions.
+   Streamlit will print a local URL (e.g., http://localhost:8501). Open it in your browser.
+
+6) **Test the flow:**
+   - Upload a short video or the generated `samples/demo.mp4`.
+   - Use the sidebar sliders to adjust frame interval and caption count.
+   - View the first five extracted frames and their generated captions.
+   - Click “Download captions” to save the suggestions as a text file.
 
 ## Demo Suggestions
 - Record a short screen capture of the Streamlit UI: upload, frame extraction, and caption output.
